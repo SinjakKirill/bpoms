@@ -11,8 +11,41 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.sinyakkirill.lab_1.MainActivity">
 
-    <SurfaceView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical">
+    <SurfaceView
+        android:layout_width="match_parent"
+        android:layout_height="311dp"
         android:id="@+id/cameraSurfaceView"/>
+    <Button
+    android:id="@+id/btnTakePicture"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    android:onClick="onClickPicture"
+    android:text="Take Photo">
+    </Button>
+    <Button
+    android:id="@+id/btnStartRecord"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignTop="@id/btnTakePicture"
+    android:layout_toRightOf="@id/btnTakePicture"
+    android:onClick="onClickStartRecord"
+    android:text="Start video">
+        </Button>
+        <Button
+   android:id="@+id/btnStopRecord"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:layout_alignTop="@id/btnStartRecord"
+   android:layout_toRightOf="@id/btnStartRecord"
+   android:onClick="onClickStopRecord"
+   android:text="Stop video">
+        </Button>
+    </LinearLayout>
 </RelativeLayout>

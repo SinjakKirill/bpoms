@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="apidocs">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Downloads/commons-lang3-3.5-bin.zip!/commons-lang3-3.5/apidocs" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
