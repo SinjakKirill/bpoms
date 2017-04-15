@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -22,6 +23,7 @@ import android.widget.Toast;
 
 @TargetApi(Build.VERSION_CODES.GINGERBREAD)
 @SuppressLint("NewApi")
+
 public class MainActivity extends AppCompatActivity {
     private SurfaceView mSurfaceView;
     public static long sTime;
@@ -95,9 +97,12 @@ public class MainActivity extends AppCompatActivity {
     private boolean prepareVideoRecorder() {
         mCamera.unlock();
         mMediaRecorder = new MediaRecorder();
-        File pictures = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        //File pictures = new File(getFilesDir().getParentFile() + "/Video");//getExternalStoragePublicDirectory(/*Environment.DIRECTORY_PICTURES*/);
+
+        //Log.d("CameraAPI", pictures.getPath());
+
         sCounter++;
-        mVideoFile = new File(pictures,String.valueOf(sCounter).toString() +"myvideo.3gp");
+        mVideoFile = new File(Environment.getExternalStorageDirectory() + "//Movies", String.valueOf(sCounter).toString() +"myvideo.3gp");
         mMediaRecorder.setCamera(mCamera);
         mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
         mMediaRecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
